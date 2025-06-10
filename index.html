@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noritz-AR</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+     <!-- Screen 1: QR Code Scan -->
+  <section class="screen visible" id="screen1">
+    <div class="content-center">
+      <div class="placeholder qr">QR CODE PLACEHOLDER</div>
+    </div>
+  </section>
+
+  <!-- Screen 2: Splash Screen -->
+  <section class="screen" id="screen2">
+    <div class="content-center fade">
+      <div class="logo">NORITZ<sup>®</sup></div>
+    </div>
+  </section>
+
+  <!-- Screen 3: Product Page -->
+  <section class="screen" id="screen3">
+    <header class="logo-header">NORITZ<sup>®</sup></header>
+    <div class="product-info">
+      <div class="product-title">NCC199 CDV Pro</div>
+      <img src="heater2.png" alt="Heater Product" class="product-image" />
+      <div class="specs">
+        <p>Indoor/Outdoor tankless water heater</p>
+        <p>Max: 199k BTU/hr</p>
+        <p>Max Flow: 6.6 gpm</p>
+      </div>
+      <button class="next-button" onclick="goToScreen(4)">NEXT</button>
+    </div>
+  </section>
+
+  <!-- Screen 4: Options Page -->
+  <section class="screen" id="screen4">
+    <header class="logo-header">NORITZ<sup>®</sup></header>
+    <div class="content-center">
+      <img src="heater2.png" alt="Heater Product" class="product-image" />
+      <button class="option-button">View product in 3D</button>
+      <button class="option-button" onclick="openIframe()">View Installation Video</button>
+    </div>
+  </section>
+
+  <!-- Iframe Overlay for 8th Wall App -->
+  <div id="iframe-overlay" class="iframe-container">
+    <button class="close-iframe" onclick="closeIframe()">✕</button>
+    <iframe
+      id="installation-iframe"
+      src=""
+      allow="camera; fullscreen; xr-spatial-tracking;"
+      frameborder="0"
+    ></iframe>
+  </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
