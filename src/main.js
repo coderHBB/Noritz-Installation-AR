@@ -15,18 +15,8 @@ window.onload = function () {
   }, 3000);
 };
 
-// Iframe Controls
-function openIframe() {
-  const overlay = document.getElementById("iframe-overlay");
-  const iframe = document.getElementById("installation-iframe");
-  iframe.src = "https://houseofbluebeans.8thwall.app/poc1/"; // Replace with your actual 8th Wall URL
-  overlay.style.display = "block";
+// Launch AR in new tab (8th Wall)
+function launchAR() {
+  window.open("https://houseofbluebeans.8thwall.app/poc1/", "_blank");
 }
-function closeIframe() {
-  const overlay = document.getElementById("iframe-overlay");
-  const iframe = document.getElementById("installation-iframe");
-  iframe.src = ""; // Stop iframe load
-  overlay.style.display = "none";
-}
-window.openIframe = openIframe;
-window.closeIframe = closeIframe;
+window.launchAR = launchAR;
